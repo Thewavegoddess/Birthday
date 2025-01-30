@@ -27,10 +27,20 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 80%;
+    max-width: 600px;
     margin: auto;
     margin-top: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: black;
+    font-size: 1.2rem; /* Ensures text is readable on mobile */
+}
+
+@media (max-width: 600px) {
+    .love-letter {
+        width: 90%;
+        font-size: 1rem;
+        padding: 15px;
+    }
 }
 
 /* 💬 Floating Messages */
@@ -56,6 +66,12 @@ body {
     100% { transform: translateY(-100vh); opacity: 0; }
 }
 
+@media (max-width: 600px) {
+    .floating-message {
+        font-size: 18px; /* Smaller font on mobile */
+    }
+}
+
 /* ❤️ Falling Hearts */
 #hearts-container {
     position: fixed;
@@ -76,4 +92,85 @@ body {
 @keyframes fall {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .heart {
+        font-size: 18px; /* Smaller hearts on mobile */
+    }
+}
+
+/* 🎇 General Mobile Layout Adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 0 10px; /* Prevent content from touching edges */
+    }
+
+    #fireworks {
+        height: 100vh; /* Full viewport height on mobile */
+    }
+
+    #floating-messages {
+        height: 100vh; /* Ensure floating messages stay within viewport */
+    }
+
+    #hearts-container {
+        height: 100vh; /* Ensure hearts container takes up full height */
+    }
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;  /* Ensures images scale down to fit their container */
+    height: auto;     /* Maintain aspect ratio */
+}
+
+/* If you want specific control over images within certain elements */
+.love-letter img {
+    width: 100%;  /* Make sure images within .love-letter fill the container */
+    max-width: 500px;  /* Limit the maximum width if needed */
+    height: auto;
+}
+
+/* Example for responsive images in floating messages */
+.floating-message img {
+    max-width: 80%;  /* Limit the width of images within floating messages */
+    height: auto;
+    margin: 0 auto;  /* Center images */
+}
+
+/* To maintain a 16:9 aspect ratio for images */
+img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+/* 🎥 Make Videos Responsive */
+video {
+    max-width: 100%;  /* Ensure video fits container width */
+    height: auto;     /* Maintain aspect ratio */
+    margin: 20px 0;   /* Add margin for spacing */
+}
+
+/* 🎶 Spotify Playlist Image */
+.spotify-image-container {
+    margin: 20px 0;
+}
+
+.spotify-image {
+    max-width: 100%;  /* Ensure image scales within its container */
+    height: auto;
+}
+
+/* Video and image container responsiveness */
+.video-container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.video-container img {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 10px;
 }
