@@ -140,9 +140,14 @@ img {
 }
 
 /* To maintain a 16:9 aspect ratio for images */
-img {
+/* img {
     width: 100%;
     aspect-ratio: 16 / 9;
+    height: auto;
+} */
+img .relation {
+    width: 100%;
+    aspect-ratio: 13 / 12;
     height: auto;
 }
 
